@@ -88,8 +88,7 @@ Include the API and QuIR definitions:
 #include "qu-ir/qu-ir.h"
 
 quant::codegen::NativeBackend backend;
-std::vector<std::uint8_t> object =
-    backend.generate(program, /*emit_start=*/true, target);
+std::vector<std::uint8_t> object = backend.generate(program, /*emit_start=*/true, target);
 ```
 
 ## License
