@@ -71,6 +71,8 @@ cmake --install build --prefix /usr/local
 The backend can be included in the compiler through a sibling checkout or CMake `FetchContent`:
 
 ```cmake
+include(FetchContent)
+
 FetchContent_Declare(quant-backend
     GIT_REPOSITORY https://github.com/quant-lang/qu-backend.git
     GIT_TAG        main
@@ -78,7 +80,7 @@ FetchContent_Declare(quant-backend
 )
 FetchContent_MakeAvailable(quant-backend)
 
-target_link_libraries(your-target PRIVATE quant-backend)
+target_link_libraries(your-target PUBLIC quant-backend) // Or PRIVATE
 ```
 
 Include the API and QuIR definitions:
